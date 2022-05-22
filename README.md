@@ -1,34 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Next.js project bootstrapped with create-next-app.
 
-## Getting Started
+# Project setup : Nextjs+React-testing-library+TypeScript+Tailwind CSS
 
-First, run the development server:
+## create-next-app
 
-```bash
-npm run dev
-# or
-yarn dev
+```s
+npx create-next-app . --use-npm
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```s
+npm i axios@0.21.1 msw@0.35.0 swr
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## project 直下に .prettierrc を作成
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```json
+{
+  "singleQuote": true,
+  "semi": false
+}
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## React testing library
 
-## Learn More
+```s
+npm i react@17.0.2 react-dom@17.0.2
+```
 
-To learn more about Next.js, take a look at the following resources:
+```s
+npm i next@11.1.2
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```s
+npm i -D jest@26.6.3 @testing-library/react@11.2.3 @types/jest@26.0.20 @testing-library/jest-dom@5.11.8 @testing-library/dom@7.29.2 babel-jest@26.6.3 @testing-library/user-event@12.6.0 jest-css-modules@2.1.0
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## project直下に .babelrc を作成
 
-## Deploy on Vercel
+```json
+    {
+        "presets": ["next/babel"]
+    }
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## package.json に jest の設定を追記
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```json
+    "jest": {
+        "testPathIgnorePatterns": [
+            "<rootDir>/.next/",
+            "<rootDir>/node_modules/"
+        ],
+        "moduleNameMapper": {
+            "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+        }
+    }
+```
+
+## package.json の script...に "test"を追記
+
+```json
+"test": "jest --env=jsdom --verbose"
+```
+
+## Typescript
+
+https://nextjs.org/learn/excel/typescript/create-tsconfig
+
+```s
+touch tsconfig.json
+```
+
+```s
+npm i -D typescript @types/react@17.0.41 @types/node
+```
+
+## Tailwind CSS
+
+https://tailwindcss.com/docs/guides/nextjs
+
+
+```s
+npm i tailwindcss@latest postcss@latest autoprefixer@latest
+```
+
+```s
+npx tailwindcss init -p
+```
+
+## tailwind.config.js に追記
+
+```js
+content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+```
+
+## global.css
+
+```s
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
