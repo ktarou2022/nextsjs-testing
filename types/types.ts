@@ -5,7 +5,7 @@ export type POST = {
   body: string
 }
 
-export type Comment = {
+export type COMMENT = {
   postId: number,
   id: number,
   name: string,
@@ -13,7 +13,7 @@ export type Comment = {
   body: string
 }
 
-export type Task = {
+export type TASK = {
   userId: number,
   id: number,
   title: string,
