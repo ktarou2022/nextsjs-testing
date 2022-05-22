@@ -1,6 +1,6 @@
 This is a Next.js project bootstrapped with create-next-app.
 
-# Project setup : Nextjs+React-testing-library+TypeScript+Tailwind CSS
+# Project setup :<br />Nextjs+React-testing-library+TypeScript+Tailwind CSS
 
 ## create-next-app
 
@@ -13,6 +13,10 @@ npm i axios@0.21.1 msw@0.35.0 swr
 ```
 
 ## project 直下に .prettierrc を作成
+
+```s
+touch .prettierrc
+```
 
 ```json
 {
@@ -36,6 +40,10 @@ npm i -D jest@26.6.3 @testing-library/react@11.2.3 @types/jest@26.0.20 @testing-
 ```
 
 ## project直下に .babelrc を作成
+
+```s
+touch .babelrc
+```
 
 ```json
     {
@@ -88,7 +96,7 @@ npm i tailwindcss@latest postcss@latest autoprefixer@latest
 npx tailwindcss init -p
 ```
 
-## tailwind.config.js に追記
+- tailwind.config.js に追記
 
 ```js
 content: [
@@ -97,10 +105,16 @@ content: [
     ],
 ```
 
-## global.css
+- global.css
 
 ```s
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
+
+## next-page-tester
+
+```s
+npm i -D next-page-tester@0.30.0
 ```
