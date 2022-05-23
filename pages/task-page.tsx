@@ -26,7 +26,7 @@ const TaskPage: FC<STATICPROPS> = ({ staticTasks }) => {
     revalidateOnMount: true,
   })
 
-  if (error) return <span>Error!</span>
+  if (error) return <span>Eror!</span>
 
   return (
     <Layout title="Task">
