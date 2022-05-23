@@ -9,6 +9,8 @@ type STATICPROPS = {
   posts: POST[]
 }
 
+/* SSG + PreFetch */
+
 const BlogPage: React.FC<STATICPROPS> = ({ posts }) => {
   return (
     <Layout title="Blog">

@@ -5,6 +5,9 @@ import axios from 'axios'
 import Comment from "../components/Comment"
 import { COMMENT } from "../types/types"
 
+
+/* SSG + Client side fetching */
+
 const axiosFetcher = async () => {
   const result = await axios.get<COMMENT[]>(
     'https://jsonplaceholder.typicode.com/comments/?_limit=10'
